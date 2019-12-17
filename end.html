@@ -9,9 +9,13 @@
     
 </head>
 <body>
-    <h1 id="start" onClick = "start()">Start Quiz</h1>
+    <h1 id="end" onClick = "start()">Restart Quiz <br> Your max score is  </h1>
+    
 <script>
+    var queryString = window.location.href ? window.location.href.split('=')[1] : window.location.search.slice(1);
+    document.getElementById('end').innerHTML = document.getElementById("end").innerHTML + queryString;
     function start(){
+        
         window.location.href = "start.html";
     }
 </script>
