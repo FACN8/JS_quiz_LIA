@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 body{
-    background-color: bisque;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     text-align: center;
     font-size: 400%;
     font-weight: 900;
-    color: darkcyan;
+    color: #fff;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -12,7 +13,6 @@ body{
     display: flex;
     justify-content: space-between;
     font-size: 40%;
-    
     margin: 5px;
 }
 
@@ -48,7 +48,7 @@ button{
     font-weight: 900;
     text-transform: uppercase;
     text-decoration: none;
-    background: #e730b9;
+    background: #7854ce;
     padding: 20px;
     border-radius: 5px;
     border: none;
@@ -67,7 +67,8 @@ button:hover {
 
 #start{
     margin: 18% 25%;
-    color: #e730b9;
+    color: #fff;
+    font-size: 80%;
 }
 
 #start:hover{
@@ -84,7 +85,7 @@ button:hover {
 
 #end{
     margin: 10% 15%;
-    color: #e730b9;
+    color: #fff;
     font-size: 80%;
 }
 
