@@ -17,12 +17,12 @@ body{
 }
 
 .questionCounter{
-    
+    margin: 5px;
    
 }
 
 .scoreCounter{
-    
+    margin: 5px;
  
 }
 #skip {
@@ -99,3 +99,18 @@ button:hover {
     border-radius: 5px;
     border: none;
 }
+
+#Progress_Status { 
+    width: 50%; 
+    background-color: rgb(230, 230, 230); 
+  } 
+    
+  #myprogressBar { 
+    width: 0.00001%; 
+    height: 35px;
+    background: rgb(5,103,106);
+    background: linear-gradient(90deg, rgba(5,103,106,1) 0%, rgba(9,121,121,1) 35%, rgba(0,255,109,1) 100%);   
+    line-height: 32px; 
+    color: black; 
+  } 
+  

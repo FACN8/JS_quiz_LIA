@@ -85,7 +85,7 @@ function refresh() {
 var skipped = false;
 
 function checkAns(n){
-
+update();
 if (n == -1) {
     skipped = true;
     currentquestion++;
@@ -117,6 +117,7 @@ if (n == -1) {
     }
     setTimeout(function() {
         buttons[n].style.background="#7854ce";
+        buttons[n].style ="hover{ background: #434343; } ";
          currentquestion++;
          isAnsCorrect.innerHTML = "";
         refresh();
@@ -125,3 +126,10 @@ if (n == -1) {
         });
     }, timer);
 }
+
+function update() { 
+    var element = document.getElementById("myprogressBar");    
+    var width = (currentquestion+1)/maxquestions * 100;  
+    element.style.width = width + '%';  
+} 
+    
