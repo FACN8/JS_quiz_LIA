@@ -25,7 +25,10 @@ body{
     
  
 }
-
+#skip {
+    color: black;
+    background-color: red;
+}
 #questionBody{    
     font-size: 80%;
     margin: 20px;

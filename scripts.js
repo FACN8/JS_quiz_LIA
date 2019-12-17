@@ -77,7 +77,9 @@ function refresh() {
 }
 
 function checkAns(n){
+if (n == -1){
 
+}
     buttons.forEach(element => {
         element.disabled = true;
     });
