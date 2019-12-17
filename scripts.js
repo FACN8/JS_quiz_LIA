@@ -19,6 +19,12 @@ var content = [
             question: "Which is the lowest point in the ocean?",
             answer: 1,
             options: ["The Dead Sea", "The Mariana Trench", "The Bermuda Triangle", "The Sargasso Sea"]},
+        {
+            question: "Where was baby Jesus born?",
+            answer: 3,
+            options: ["Nazareth", "Umm Al Fahm", "Ramat Gan", "Bethlehem"]
+        },
+        
 ]
 var score = 0;
 var currentquestion = 0;
