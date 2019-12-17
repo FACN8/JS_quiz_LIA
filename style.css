@@ -11,7 +11,7 @@ body{
 #header{
     display: flex;
     justify-content: space-between;
-    font-size: 80%;
+    font-size: 40%;
     
     margin: 5px;
 }
@@ -81,6 +81,7 @@ button:hover {
 #end{
     margin: 10% 15%;
     color: #e730b9;
+    font-size: 80%;
 }
 
 #end:hover{
