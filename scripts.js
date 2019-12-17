@@ -1,21 +1,28 @@
 var content = [
     {
-    question: "What is the capital of Thailand?",
-    answer: 2,
-    options: ["Beijing", "Shanghai", "Bangkok", "Jakarta"]},
-    
-    {
-    question: "aloo 2",
-    answer: 3,
-    options: ["Button one", "Button two", "Button three", "Button four"]},
-    {
-    question: "aloo 3",
-    answer: 2,
-    options: ["Button one", "Button two", "Button three", "Button four"]},
+        question: "What is the capital of Thailand?",
+        answer: 2,
+        options: ["Beijing", "Shanghai", "Bangkok", "Jakarta"]},
+        {
+            question: "Which country is in the Caribbean?",
+            answer: 2,
+            options: ["Fiji", "Tuvalu", "St Kitts and Nevis", "Micronesia"]},
+        {
+            question: "Which country is in Scandinavia?",
+            answer: 0,
+            options: ["Finland", "Slovenia", "Portugal", "Ukraine"]},
+        {
+            question: "Which of the following is the most populous country?",
+            answer: 3,
+            options: ["France", "Japan", "Russia", "United States"]},
+        {
+            question: "Which is the lowest point in the ocean?",
+            answer: 1,
+            options: ["The Dead Sea", "The Mariana Trench", "The Bermuda Triangle", "The Sargasso Sea"]},
 ]
 var score = 0;
 var currentquestion = 0;
-var maxquestions = 3;
+var maxquestions = content.length;
 const bodyElement = document.getElementById('questionBody');
 const buttons = document.querySelectorAll('button');
 const scoreCounter = document.getElementById('scoreCounter');
@@ -75,9 +82,16 @@ function refresh() {
     buttons[2].textContent = content[currentquestion].options[2]
     buttons[3].textContent = content[currentquestion].options[3]
 }
+var skipped = false;
 
 function checkAns(n){
 
+if (n == -1) {
+    skipped = true;
+    currentquestion++;
+    refresh();
+    return 0;
+}
     buttons.forEach(element => {
         element.disabled = true;
     });
@@ -86,7 +100,13 @@ function checkAns(n){
     if (n == content[currentquestion].answer) {
         isAnsCorrect.innerHTML = "Correct!"
         buttons[n].style.background="#2e9924";
-        score+=10;
+
+        if (skipped) {
+            score += 5;
+            skipped = false;
+        } else
+            score+=10;
+
         timer = 1000;
     }
     else{
@@ -104,6 +124,4 @@ function checkAns(n){
             element.disabled = false;
         });
     }, timer);
-
-    
 }
