@@ -1,30 +1,35 @@
 var content = [
     {
         question: "What is the capital of Thailand?",
+        difficulty: 1,
         answer: 2,
         options: ["Beijing", "Shanghai", "Bangkok", "Jakarta"]},
         {
             question: "Which country is in the Caribbean?",
+            difficulty: 2,
             answer: 2,
             options: ["Fiji", "Tuvalu", "St Kitts and Nevis", "Micronesia"]},
         {
             question: "Which country is in Scandinavia?",
+            difficulty: 1,
             answer: 0,
             options: ["Finland", "Slovenia", "Portugal", "Ukraine"]},
         {
             question: "Which of the following is the most populous country?",
+            difficulty: 1,
             answer: 3,
             options: ["France", "Japan", "Russia", "United States"]},
         {
             question: "Which is the lowest point in the ocean?",
+            difficulty: 3,
             answer: 1,
             options: ["The Dead Sea", "The Mariana Trench", "The Bermuda Triangle", "The Sargasso Sea"]},
         {
             question: "Where was baby Jesus born?",
+            difficulty: 1,
             answer: 3,
             options: ["Nazareth", "Umm Al Fahm", "Ramat Gan", "Bethlehem"]
-        },
-        
+        }
 ]
 var score = 0;
 var currentquestion = 0;
@@ -43,7 +48,23 @@ var task_time = document.getElementById("taskTimer");
 var mins_countdown =1;
 var seconds_countdown =30;
 
+content.sort(compare);
+
+function compare(a, b) {
+    return a.difficulty - b.difficulty;
+}
+
 refresh();
+
+
+/*
+var arr = [{"difficulty" : 1},{difficulty: 2},3,4];
+arr.sort(compare);
+
+function compare(a, b){
+    return a.difficulty + 17 -b;
+}
+*/
 
 
 function tick(){
