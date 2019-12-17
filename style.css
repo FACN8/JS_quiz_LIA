@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+body{
+    background-color: bisque;
+    text-align: center;
+    font-size: 400%;
+    font-weight: 900;
+    color: darkcyan;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 80%;
+    
+    margin: 5px;
+}
+
+.questionCounter{
+    
+   
+}
+
+.scoreCounter{
+    
+ 
+}
+
+#questionBody{    
+    font-size: 80%;
+    margin: 20px;
+}
+
+#footer{
+
+    margin: 20px;
+}
+
+button{
+
+    margin: 20px;
+    font-size: 40%;
+    color: #fff !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #e730b9;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+button:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+}
+
+#start{
+    margin: 18% 25%;
+    color: #e730b9;
+}
+
+#start:hover{
+    background: #dfb6d9;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#end{
+    margin: 10% 15%;
+    color: #e730b9;
+}
+
+#end:hover{
+    background: #dfb6d9;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
