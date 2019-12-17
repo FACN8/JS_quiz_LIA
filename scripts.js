@@ -96,7 +96,7 @@ function checkAns(n){
 
     }
     setTimeout(function() {
-        buttons[n].style.background="#e730b9";
+        buttons[n].style.background="#7854ce";
          currentquestion++;
          isAnsCorrect.innerHTML = "";
         refresh();
