@@ -40,7 +40,7 @@ button{
 
     margin: 20px;
     font-size: 40%;
-    color: #fff !important;
+    color: #fff;
     font-weight: 900;
     text-transform: uppercase;
     text-decoration: none;
@@ -52,13 +52,14 @@ button{
 }
 
 button:hover {
-    background: #434343;
+    
     letter-spacing: 1px;
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
     cursor: pointer;
+    background: #434343;
 }
 
 #start{
@@ -68,7 +69,6 @@ button:hover {
 }
 
 #start:hover{
-    background: #dfb6d9;
     letter-spacing: 1px;
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
@@ -86,7 +86,6 @@ button:hover {
 }
 
 #end:hover{
-    background: #dfb6d9;
     letter-spacing: 1px;
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
