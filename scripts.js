@@ -7,22 +7,62 @@ var content = [
     {
     question: "aloo 2",
     answer: 3,
-    options: ["Button one", "Button two", "Button three", "Button four"]}
+    options: ["Button one", "Button two", "Button three", "Button four"]},
+    {
+    question: "aloo 3",
+    answer: 2,
+    options: ["Button one", "Button two", "Button three", "Button four"]},
 ]
 var score = 0;
 var currentquestion = 0;
-var maxquestions = 2;
+var maxquestions = 3;
 const bodyElement = document.getElementById('questionBody');
 const buttons = document.querySelectorAll('button');
 const scoreCounter = document.getElementById('scoreCounter');
 const questionCounter = document.getElementById('questionCounter');
 const isAnsCorrect = document.getElementById('isCorrect');
-var task_timer = 0;
+
+var starter;
+var start_flag = false;
+
+
+var task_time = document.getElementById("taskTimer");
+var mins_countdown =1;
+var seconds_countdown =30;
 
 refresh();
 
 
+function tick(){
+    if(mins_countdown == 0 && seconds_countdown ==0){
+        mins_countdown =1;
+        seconds_countdown =30;
+        start_flag = false;
+        task_time.textContent = "00";
+        clearInterval(starter);
+        window.location.href = "end.html?score=" + score.toString();
+        return;
+    }
+    if(seconds_countdown == 0){
+        mins_countdown--;
+        seconds_countdown = 60;
+    }
+    seconds_countdown--;
+    
+    task_time.textContent = ((mins_countdown < 10) ? ("0" + mins_countdown) : mins_countdown) + ":" + 
+    ((seconds_countdown < 10) ? ("0" + seconds_countdown) : seconds_countdown);
+}
+
+
+
 function refresh() {
+
+    if(!start_flag){
+        start_flag = true;
+        starter = setInterval(tick, 1000);
+        
+    }
+
     if(currentquestion == maxquestions){
         window.location.href = "end.html?score=" + score.toString();
     }
