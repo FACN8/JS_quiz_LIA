@@ -1,21 +1,28 @@
 var content = [
     {
-    question: "What is the capital of Thailand?",
-    answer: 2,
-    options: ["Beijing", "Shanghai", "Bangkok", "Jakarta"]},
-    
-    {
-    question: "What is the capital of Great Britian?",
-    answer: 3,
-    options: ["", "Button two", "Button three", "Button four"]},
-    {
-    question: "aloo 3",
-    answer: 2,
-    options: ["Button one", "Button two", "Button three", "Button four"]},
+        question: "What is the capital of Thailand?",
+        answer: 2,
+        options: ["Beijing", "Shanghai", "Bangkok", "Jakarta"]},
+        {
+            question: "Which country is in the Caribbean?",
+            answer: 2,
+            options: ["Fiji", "Tuvalu", "St Kitts and Nevis", "Micronesia"]},
+        {
+            question: "Which country is in Scandinavia?",
+            answer: 0,
+            options: ["Finland", "Slovenia", "Portugal", "Ukraine"]},
+        {
+            question: "Which of the following is the most populous country?",
+            answer: 3,
+            options: ["France", "Japan", "Russia", "United States"]},
+        {
+            question: "Which is the lowest point in the ocean?",
+            answer: 1,
+            options: ["The Dead Sea", "The Mariana Trench", "The Bermuda Triangle", "The Sargasso Sea"]},
 ]
 var score = 0;
 var currentquestion = 0;
-var maxquestions = 3;
+var maxquestions = content.length;
 const bodyElement = document.getElementById('questionBody');
 const buttons = document.querySelectorAll('button');
 const scoreCounter = document.getElementById('scoreCounter');
@@ -79,9 +86,12 @@ var skipped = false;
 
 function checkAns(n){
 
-if (n == -1)
+if (n == -1) {
     skipped = true;
-
+    currentquestion++;
+    refresh();
+    return 0;
+}
     buttons.forEach(element => {
         element.disabled = true;
     });
