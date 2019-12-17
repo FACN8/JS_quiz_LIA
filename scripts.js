@@ -103,7 +103,5 @@ function checkAns(n){
         buttons.forEach(element => {
             element.disabled = false;
         });
-    }, timer);
-
-    
+    }, timer);    
 }
