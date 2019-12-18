@@ -1,3 +1,12 @@
+var element = document.getElementById("myprogressBar");  
+const bodyElement = document.getElementById('questionBody');
+const buttons = document.querySelectorAll('button');
+const scoreCounter = document.getElementById('scoreCounter');
+const questionCounter = document.getElementById('questionCounter');
+const isAnsCorrect = document.getElementById('isCorrect');
+var starter;
+var start_flag = false;
+var task_time = document.getElementById("taskTimer");
 var content = [
     {
         question: "What is the capital of Thailand?",
@@ -31,22 +40,33 @@ var content = [
             options: ["Nazareth", "Umm Al Fahm", "Ramat Gan", "Bethlehem"]
         }
 ]
-var score = 0;
-var currentquestion = 0;
 var maxquestions = content.length;
-const bodyElement = document.getElementById('questionBody');
-const buttons = document.querySelectorAll('button');
-const scoreCounter = document.getElementById('scoreCounter');
-const questionCounter = document.getElementById('questionCounter');
-const isAnsCorrect = document.getElementById('isCorrect');
+var currentquestion;
+var score;
+var mins_countdown;
+var seconds_countdown;
+var width;
+var skipped;
+if (window.location.search.slice(1).split('&').length > 1) {
+    var queryString = window.location.search.slice(1).split('&');
 
-var starter;
-var start_flag = false;
+    currentquestion = parseInt(queryString[0].split('=')[1]);
+    score = parseInt(queryString[1].split('=')[1]);
+    mins_countdown = queryString[2].split('=')[1];
+    seconds_countdown = queryString[3].split('=')[1];
+    skipped = parseInt(queryString[4].split('=')[1]) == 1 ? true : false;
+    
+    width = (currentquestion+1)/maxquestions * 100;  
+    element.style.width = width + '%';  
 
 
-var task_time = document.getElementById("taskTimer");
-var mins_countdown =1;
-var seconds_countdown =30;
+} else {
+    skipped = false;
+    score = 0;
+    currentquestion = 0;
+    mins_countdown =1;
+    seconds_countdown =30;
+}
 
 content.sort(compare);
 
@@ -76,8 +96,6 @@ function tick(){
     ((seconds_countdown < 10) ? ("0" + seconds_countdown) : seconds_countdown);
 }
 
-
-
 function refresh() {
 
     if(!start_flag) {
@@ -93,7 +111,7 @@ function refresh() {
     questionCounter.innerHTML = (currentquestion + 1).toString() + "/" + maxquestions.toString();
 
     if((currentquestion+1) % 5 ==0 ){
-        window.location.href = "bonus.html?question=" +currentquestion.toString();
+        window.location.href = "bonus.html?question=" +currentquestion.toString() + "&score=" + score.toString() + "&mins_countdown=" + mins_countdown.toString() + "&seconds_countdown=" + seconds_countdown.toString() + "&skipped=" + (skipped ? 1 : 0);
     }
     bodyElement.innerHTML = content[currentquestion].question;
     buttons[0].textContent = content[currentquestion].options[0];
@@ -101,7 +119,6 @@ function refresh() {
     buttons[2].textContent = content[currentquestion].options[2]
     buttons[3].textContent = content[currentquestion].options[3]
 }
-var skipped = false;
 
 function checkAns(n){
 update();
@@ -147,9 +164,6 @@ if (n == -1) {
 }
 
 function update() { 
-    var element = document.getElementById("myprogressBar");    
     var width = (currentquestion+1)/maxquestions * 100;  
     element.style.width = width + '%';  
-} 
-    
-
+}

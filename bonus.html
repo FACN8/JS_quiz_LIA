@@ -18,8 +18,15 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore;
-var currScore =0;
+var currScore = 0;
 
+var queryString = window.location.search.slice(1).split('&');
+
+var prevQuestion = queryString[0].split('=')[1];
+var prevScore = queryString[1].split('=')[1];
+var mins_countdown = queryString[2].split('=')[1];
+var seconds_countdown = queryString[3].split('=')[1];
+var skipped = queryString[4].split('=')[1];
 
 function startGame() {
     myGamePiece = new component(20, 20, "red", 10, 120);
@@ -102,7 +109,8 @@ function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
-            window.location.href = "start.html?question=" + currentquestion.toString() + "?score=" + currScore.toString();
+            window.location.href = "start.html?question=" + (parseInt(prevQuestion)).toString() + "&score=" + (parseInt(prevScore) + currScore).toString() + "&mins_countdown=" + mins_countdown.toString() + "&seconds_countdown=" + seconds_countdown.toString() + "&skipped=" + skipped.toString();
+            
             return;
         }
         if(myGamePiece.x == myObstacles[i].x )
