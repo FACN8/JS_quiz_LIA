@@ -56,17 +56,6 @@ function compare(a, b) {
 
 refresh();
 
-
-/*
-var arr = [{"difficulty" : 1},{difficulty: 2},3,4];
-arr.sort(compare);
-
-function compare(a, b){
-    return a.difficulty + 17 -b;
-}
-*/
-
-
 function tick(){
     if(mins_countdown == 0 && seconds_countdown ==0){
         mins_countdown =1;
@@ -91,18 +80,21 @@ function tick(){
 
 function refresh() {
 
-    if(!start_flag){
+    if(!start_flag) {
         start_flag = true;
         starter = setInterval(tick, 1000);
-        
     }
 
     if(currentquestion == maxquestions){
         window.location.href = "end.html?score=" + score.toString();
     }
 
-    scoreCounter.innerHTML = score;
-    questionCounter.innerHTML = "Q " + (currentquestion + 1).toString() + "/" + maxquestions.toString();
+    scoreCounter.innerHTML = " " + score + " ";
+    questionCounter.innerHTML = (currentquestion + 1).toString() + "/" + maxquestions.toString();
+
+    if((currentquestion+1) % 5 ==0 ){
+        window.location.href = "bonus.html?question=" +currentquestion.toString();
+    }
     bodyElement.innerHTML = content[currentquestion].question;
     buttons[0].textContent = content[currentquestion].options[0];
     buttons[1].textContent = content[currentquestion].options[1]
@@ -160,3 +152,4 @@ function update() {
     element.style.width = width + '%';  
 } 
     
+
