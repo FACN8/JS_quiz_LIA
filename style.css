@@ -9,6 +9,30 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
 
+#taskTimer {
+    border: solid rgb(43, 42, 42) 1px;
+   border-radius: 6px;
+   padding-top: 2px;
+   padding-left: 4px;
+   padding-right: 4px;
+}
+
+#questionCounter{
+    border: solid rgb(124, 124, 124) 1px;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#scoreCounter{
+    border: solid rgb(124, 124, 124) 1px;
+    border-radius: 6px;
+    padding-top: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
 #header{
     display: flex;
     justify-content: space-between;
@@ -16,22 +40,15 @@ body{
     margin: 5px;
 }
 
-.questionCounter{
-    margin: 5px;
-   
-}
-
-.scoreCounter{
-    margin: 5px;
- 
-}
 #skip {
-    color: black;
-    background-color: red;
+    color: white;
+    background-color: indianred;
 }
 #questionBody{    
     font-size: 80%;
     margin: 20px;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
 #footer{
@@ -42,7 +59,7 @@ body{
 button{
 
     margin: 20px;
-    margin-top: 10%;
+    margin-top: 10px;
     font-size: 40%;
     color: #fff;
     font-weight: 900;
@@ -103,6 +120,7 @@ button:hover {
 #Progress_Status { 
     width: 50%; 
     background-color: rgb(230, 230, 230); 
+    border-radius: 10px;
   } 
     
   #myprogressBar { 
@@ -111,6 +129,8 @@ button:hover {
     background: rgb(5,103,106);
     background: linear-gradient(90deg, rgba(5,103,106,1) 0%, rgba(9,121,121,1) 35%, rgba(0,255,109,1) 100%);   
     line-height: 32px; 
-    color: black; 
+    color: black;
+    border-radius: 10px;
+    border: solid rgb(0, 85, 0) 1px;
   } 
   
